@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หลอนสะพรึง | เว็บรีวิวหนังผี คืนนี้อย่าอยู่คนเดียว</title>
+  
+  <!-- Google Fonts: Horror, Occult & Thriller Typographies -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Charm:wght@400;700&family=Cinzel+Decorative:wght@700&family=Nosifer&family=Prompt:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Atmospheric Background Overlays -->
+  <div class="vignette-overlay"></div>
+  <div class="fog-overlay"></div>
+
+  <!-- Floating Ghosts Specters (ผีลอยไปมาในฉาก) -->
+  <div class="ghosts-container" id="ghosts-container">
+    <div class="floating-ghost ghost-1" title="วิญญาณหลอน">
+      <div class="ghost-body">
+        <div class="ghost-eyes">
+          <div class="ghost-eye"></div>
+          <div class="ghost-eye"></div>
+        </div>
+        <div class="ghost-mouth"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+
+    <div class="floating-ghost ghost-2" title="วิญญาณหลอน">
+      <div class="ghost-body">
+        <div class="ghost-eyes">
+          <div class="ghost-eye"></div>
+          <div class="ghost-eye"></div>
+        </div>
+        <div class="ghost-mouth"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+
+    <div class="floating-ghost ghost-3" title="วิญญาณหลอน">
+      <div class="ghost-body">
+        <div class="ghost-eyes">
+          <div class="ghost-eye"></div>
+          <div class="ghost-eye"></div>
+        </div>
+        <div class="ghost-mouth"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+
+    <div class="floating-ghost ghost-4" title="วิญญาณหลอน">
+      <div class="ghost-body">
+        <div class="ghost-eyes">
+          <div class="ghost-eye"></div>
+          <div class="ghost-eye"></div>
+        </div>
+        <div class="ghost-mouth"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-skull brand-icon"></i>
+        <div class="brand-text">
+          <h1>หลอน<span>สะพรึง</span></h1>
+          <p>HAUNTED MOVIE REVIEWS</p>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <!-- Font Theme Selector -->
+        <div class="font-picker-wrap" title="เลือกสไตล์ฟอนต์หลอน">
+          <i class="fa-solid fa-font" style="color: var(--text-dim); font-size: 0.85rem;"></i>
+          <select id="font-select" class="font-select">
+            <option value="font-theme-occult" selected>ฟอนต์: คาถาอาคมหลอน (Charm + Chakra)</option>
+            <option value="font-theme-slasher">ฟอนต์: เลือดหยด & ฆาตกร (Nosifer + Prompt)</option>
+            <option value="font-theme-mystery">ฟอนต์: ระทึกขวัญลึกลับ (Bai Jamjuree)</option>
+            <option value="font-theme-gothic">ฟอนต์: กอธิคโบราณ (Cinzel + Chakra)</option>
+          </select>
+        </div>
+
+        <!-- Ambient Sound Toggle -->
+        <button id="btn-sound" class="btn-action" title="เปิด/ปิดเสียงบรรยากาศหลอน">
+          <i class="fa-solid fa-volume-xmark"></i>
+          <span>เสียงบรรยากาศ</span>
+        </button>
+
+        <!-- Safe Mode Toggle (เปิดไฟนีออนสำหรับคนกลัวผี) -->
+        <button id="btn-safe-mode" class="btn-action btn-safe-mode" title="คลิกถ้ากลัวความมืด">
+          <i class="fa-regular fa-lightbulb"></i>
+          <span>เปิดไฟห้อง (Safe Mode)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Spotlight Section (หนังแนะนำคืนนี้) -->
+    <section class="hero-spotlight">
+      <div id="spotlight-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Horror Roulette (วงล้อสุ่มหนังผีตามระดับความกล้า) -->
+    <section class="roulette-section">
+      <div class="roulette-info">
+        <h3><i class="fa-solid fa-dice-d20" style="color: var(--blood-red);"></i> คืนนี้ดูเรื่องอะไรดี? (เครื่องวัดระดับความกล้า)</h3>
+        <p>เลือกระดับความกล้าของคุณ แล้วให้วิญญาณเป็นผู้เลือกหนังให้คุณดูคืนนี้...</p>
+      </div>
+      <div class="roulette-controls">
+        <select id="bravery-select" class="bravery-select">
+          <option value="1">ระดับ 1: มือใหม่ขวัญอ่อน (ระทึกพอดีคำ)</option>
+          <option value="2" selected>ระดับ 2: คอหนังผีตัวจริง (ชอบสะดุ้ง)</option>
+          <option value="3">ระดับ 3: สายจิตแข็งไร้ความกลัว (หลอนจิตตก)</option>
+        </select>
+        <button id="btn-roulette" class="btn-primary" style="padding: 10px 20px;">
+          <i class="fa-solid fa-dice-d20"></i> สุ่มหนังผีวัดใจ
+        </button>
+      </div>
+    </section>
+
+    <!-- Filter & Controls -->
+    <section class="controls-bar">
+      <div class="search-and-sort">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" class="search-input" placeholder="ค้นหาชื่อเรื่อง, ผู้กำกับ, หรือคำเตือนสปอยล์...">
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">เรียงตาม:</span>
+          <select id="sort-select" class="sort-select">
+            <option value="spookiness">ความหลอนสูงสุด (Spookiest)</option>
+            <option value="jumpScare">Jump Scare หนักสุด (สะดุ้งตัวลอย)</option>
+            <option value="overall">คะแนนวิจารณ์โดยรวม</option>
+            <option value="newest">ปีที่ฉาย (ใหม่สุด)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-pills">
+        <button class="cat-pill active" data-cat="all">ทั้งหมด (All Horrors)</button>
+        <button class="cat-pill" data-cat="thai">ผีไทย / ไสยศาสตร์</button>
+        <button class="cat-pill" data-cat="found-footage">Found Footage / สารคดีหลุด</button>
+        <button class="cat-pill" data-cat="psychological">จิตวิทยา / ลัทธิหลอน</button>
+        <button class="cat-pill" data-cat="western">สากล / บ้านผีสิง</button>
+        <button class="cat-pill" data-cat="slasher">สแลชเชอร์ / ฆาตกรโรคจิต</button>
+      </div>
+    </section>
+
+    <!-- Movies Grid -->
+    <section id="movies-grid" class="movies-grid">
+      <!-- Rendered dynamically by app.js -->
+    </section>
+  </main>
+
+  <!-- Interactive Modal for Detailed Reviews & Warning -->
+  <div id="review-modal" class="modal-overlay">
+    <div class="modal-container">
+      <button id="btn-close-modal" class="btn-close-modal" title="ปิดหน้าต่าง">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modal-dynamic-content">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-quote">"อย่าหันหลังไปมอง... เพราะบางสิ่งอาจกำลังยืนมองคุณอยู่"</p>
+      <p>© 2026 หลอนสะพรึง (Haunted Hub) — เว็บรีวิวภาพยนตร์สยองขวัญ สำหรับคนชอบนอนไม่หลับ</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
